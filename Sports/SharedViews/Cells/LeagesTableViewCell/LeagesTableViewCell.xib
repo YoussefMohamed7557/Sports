@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LeagesTableViewCell" rowHeight="148" id="KGk-i7-Jjw" customClass="LeagesTableViewCell" customModule="Sports" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="442" height="148"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="442" height="148"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f08-jW-pmy">
+                        <rect key="frame" x="4" y="4" width="434" height="140"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bQC-ZF-dYU">
+                                <rect key="frame" x="8" y="8" width="124" height="124"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eRf-aX-q0I">
+                                        <rect key="frame" x="0.0" y="0.0" width="124" height="124"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="eRf-aX-q0I" secondAttribute="trailing" id="CGF-ie-0mT"/>
+                                    <constraint firstItem="eRf-aX-q0I" firstAttribute="top" secondItem="bQC-ZF-dYU" secondAttribute="top" id="ZRs-OB-Mkr"/>
+                                    <constraint firstAttribute="width" secondItem="bQC-ZF-dYU" secondAttribute="height" multiplier="1:1" id="l08-N2-aRU"/>
+                                    <constraint firstItem="eRf-aX-q0I" firstAttribute="leading" secondItem="bQC-ZF-dYU" secondAttribute="leading" id="qiK-qS-GzV"/>
+                                    <constraint firstAttribute="bottom" secondItem="eRf-aX-q0I" secondAttribute="bottom" id="zas-ep-Zf8"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEx-Q3-xw8">
+                                <rect key="frame" x="140" y="58" width="286" height="24"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-CondensedBold" family="American Typewriter" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="bQC-ZF-dYU" secondAttribute="bottom" constant="8" id="Cdm-99-wqh"/>
+                            <constraint firstItem="HEx-Q3-xw8" firstAttribute="leading" secondItem="bQC-ZF-dYU" secondAttribute="trailing" constant="8" id="PJt-8M-Ouh"/>
+                            <constraint firstItem="bQC-ZF-dYU" firstAttribute="top" secondItem="f08-jW-pmy" secondAttribute="top" constant="8" id="faw-tb-7x7"/>
+                            <constraint firstItem="HEx-Q3-xw8" firstAttribute="centerY" secondItem="eRf-aX-q0I" secondAttribute="centerY" id="ff6-I9-Gw4"/>
+                            <constraint firstItem="bQC-ZF-dYU" firstAttribute="leading" secondItem="f08-jW-pmy" secondAttribute="leading" constant="8" id="giY-Xf-kt8"/>
+                            <constraint firstAttribute="trailing" secondItem="HEx-Q3-xw8" secondAttribute="trailing" constant="8" id="lMI-sV-H2y"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="f08-jW-pmy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="Qad-94-N02"/>
+                    <constraint firstAttribute="trailing" secondItem="f08-jW-pmy" secondAttribute="trailing" constant="4" id="aUT-0h-HZW"/>
+                    <constraint firstItem="f08-jW-pmy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="4" id="dxo-5h-4Nq"/>
+                    <constraint firstAttribute="bottom" secondItem="f08-jW-pmy" secondAttribute="bottom" constant="4" id="yYk-k4-Luo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="leageNameLabel" destination="HEx-Q3-xw8" id="Hh6-DF-Tld"/>
+                <outlet property="leagesImageBackgroundView" destination="bQC-ZF-dYU" id="ngD-ZZ-f3P"/>
+                <outlet property="leagesImageView" destination="eRf-aX-q0I" id="kur-TZ-QcK"/>
+                <outlet property="spuerBackgroundView" destination="f08-jW-pmy" id="nO1-ha-2Q8"/>
+            </connections>
+            <point key="canvasLocation" x="182.60869565217394" y="98.4375"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

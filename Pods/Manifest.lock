@@ -1,0 +1,32 @@
+PODS:
+  - IQKeyboardManagerSwift (6.5.11)
+  - Kingfisher (6.3.1)
+  - RappleProgressHUD (4.1)
+  - ReachabilitySwift (5.0.0)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - Kingfisher
+  - RappleProgressHUD
+  - ReachabilitySwift
+  - Toast-Swift (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - Kingfisher
+    - RappleProgressHUD
+    - ReachabilitySwift
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: c7955c0bdbf7b2eb29bb7daaa44e3d90f55a9a85
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  RappleProgressHUD: f29bc5dc5f9834c2caa9c2ae21ba11f3ff2b5a85
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: 313ea6a8743a75ca104db3c3563c36915a40185a
+
+COCOAPODS: 1.12.1
