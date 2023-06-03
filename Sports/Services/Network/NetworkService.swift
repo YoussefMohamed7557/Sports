@@ -20,7 +20,7 @@ class NetworkService : NetworkServicesProtocol {
                 let result = try JSONDecoder().decode(LeagueRoot.self, from: data!)
                 completionHandler(result)
             }catch let error{
-                print(error.localizedDescription)
+                print(error.localizedDescription )
                 completionHandler(nil)
             }
         
@@ -29,7 +29,7 @@ class NetworkService : NetworkServicesProtocol {
     }
     
     static func getUpComingEvents(sportName: String, leagueId: Int, completionHandler: @escaping (UpComingRoot?) -> Void) {
-        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&leagueId=\(leagueId)&from=2023-05-09&to=2024-02-09&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c")
+        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&leagueId=\(leagueId)&from=2022-05-09&to=2024-02-09&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c")
         guard let newUrl = url else {
             return
         }
@@ -40,8 +40,9 @@ class NetworkService : NetworkServicesProtocol {
                 let result = try JSONDecoder().decode(UpComingRoot.self, from: data!)
                 completionHandler(result)
             }catch let error{
-                print(error.localizedDescription)
+                print(error.localizedDescription , newUrl)
                 completionHandler(nil)
+                print(newUrl)
             }
             
         }
@@ -49,7 +50,7 @@ class NetworkService : NetworkServicesProtocol {
     }
     
     static func getLatestEvents(sportName: String, leagueId: Int, completionHandler: @escaping (LatestEventRoot?) -> Void) {
-        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&leagueId=\(leagueId)&from=2023-04-09&to=2024-02-09&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c")
+        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&leagueId=\(leagueId)&from=2022-05-09&to=2024-02-09&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c")
         guard let newUrl = url else {
             return
         }

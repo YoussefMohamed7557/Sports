@@ -7,6 +7,7 @@
 
 import UIKit
 import Reachability
+import RappleProgressHUD
 class LeageDetailsViewController: UIViewController {
 
     @IBOutlet weak var upComingEventsCollectionView: UICollectionView!
@@ -25,6 +26,10 @@ class LeageDetailsViewController: UIViewController {
         upComingEventsCollectionView.register(UINib(nibName: "UpComingEventCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "UpComingEventCollectionViewCell")
         latestEventsCollectionView.register(UINib(nibName: "LatestEventCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "LatestEventCollectionViewCell")
         teamsCollectionView.register(UINib(nibName: "TeamsCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "TeamsCollectionViewCell")
+        upComingList = []
+        latestEventsList = []
+        let attributes = RappleActivityIndicatorView.attribute(style: RappleStyle.apple, tintColor: .gray, screenBG: .gray, progressBG: .black, progressBarBG: .gray, progreeBarFill: .gray, thickness: 4)
+        RappleActivityIndicatorView.startAnimating(attributes:attributes)
     }
     @IBAction func backButton(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
@@ -35,7 +40,7 @@ class LeageDetailsViewController: UIViewController {
         
         leagueDetailVM.getUpccoming(sportName: nameOfSport, leagueId: idOfLeague!)
         leagueDetailVM.bindUpComingListToLeagueDetailsVC = { () in
-            DispatchQueue.main.async {
+                DispatchQueue.main.async {
                 self.upComingList = leagueDetailVM.upComingList
                 self.upComingEventsCollectionView.reloadData()
             }
@@ -57,12 +62,14 @@ class LeageDetailsViewController: UIViewController {
         checkIfThereIsNoEvents()
     }
     func checkIfThereIsNoEvents(){
+        RappleActivityIndicatorView.stopAnimation()
         if self.upComingList?.count == 0 && self.latestEventsList?.count == 0 && teamsList?.count == 0{
             let alert = UIAlertController(title: nil, message: "Sorry, this league has no information right now", preferredStyle: .alert)
                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
                alert.addAction(okAction)
                present(alert, animated: true, completion: nil)
         }
+        
     }
 }
 extension LeageDetailsViewController:UICollectionViewDelegate,UICollectionViewDataSource{
@@ -91,6 +98,7 @@ extension LeageDetailsViewController:UICollectionViewDelegate,UICollectionViewDa
                 cell.dateLabel.text = upComingList![indexPath.row].event_date
                 cell.timeLabel.text = upComingList![indexPath.row].event_time
                 return cell
+            
         case 1:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LatestEventCollectionViewCell", for: indexPath) as! LatestEventCollectionViewCell
             cell.awayClubImageView.setImageUsinKingFisherPod(latestEventsList![indexPath.row].away_team_logo ?? "")
@@ -137,10 +145,10 @@ extension LeageDetailsViewController: UICollectionViewDelegateFlowLayout {
             case 0:
                 return CGSize(width: collectionView.frame.width - 16 , height: collectionView.frame.height)
             case 1:
-              return CGSize(width: collectionView.frame.width - 16 , height: collectionView.frame.height / 5)
+              return CGSize(width: collectionView.frame.width - 16 , height: 100)
             case 2:
                  let w1 = collectionView.frame.width - (15 * 2)
-                 let cell_width = (w1 - (15 * 2)) / 4
+                 let cell_width = (w1 - (15 * 2)) / 3
                  return CGSize(width: cell_width, height: collectionView.frame.height)
             default:
                 return CGSize(width: 0 , height: 0)
@@ -175,3 +183,4 @@ extension LeageDetailsViewController{
         }
     }
 }
+// https://apiv2.allsportsapi.com/football/?met=Livescores&leagueId=5&from=2022-05-09&to=2024-02-09&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c

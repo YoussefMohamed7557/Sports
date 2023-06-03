@@ -33,7 +33,7 @@ class TeamDetailsViewController: UIViewController {
         coachNameLabel.text = "Coach: \((passedTeam?.coaches?[0].coach_name ?? "not existed")!)"
         clubLogo.setImageUsinKingFisherPod(passedTeam?.team_logo ?? "")
                 let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width:playersCollectionView.frame.width/2 - 4,height: playersCollectionView.frame.height/2)
+        layout.itemSize = CGSize(width:playersCollectionView.frame.width/2.7,height: playersCollectionView.frame.height/2)
             playersCollectionView.collectionViewLayout = layout
         clubNameLabel.text = passedTeam?.team_name
     }

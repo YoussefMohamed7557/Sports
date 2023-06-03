@@ -142,6 +142,9 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="yCb-7t-7ub" id="AEr-nn-5om"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-WT-m3o">
                                         <rect key="frame" x="358" y="52" width="16" height="16"/>
@@ -150,6 +153,9 @@
                                             <constraint firstAttribute="height" constant="16" id="mH9-zs-Yr8"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Search"/>
+                                        <connections>
+                                            <action selector="btnSearch:" destination="yCb-7t-7ub" eventType="touchUpInside" id="tVA-cZ-v5o"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Leagues" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHG-Kv-igr">
                                         <rect key="frame" x="160" y="44" width="70.333333333333314" height="32"/>
@@ -199,6 +205,11 @@
                     </view>
                     <connections>
                         <outlet property="leagesTableView" destination="fIA-4B-hkF" id="PTK-QX-6AW"/>
+                        <outlet property="leaguesLeading" destination="G9y-rr-ZZ9" id="fZ1-EC-v50"/>
+                        <outlet property="leaguesTrailing" destination="TOB-ok-sjR" id="0oF-p7-lB4"/>
+                        <outlet property="searchTextField" destination="hhH-83-8AE" id="eft-1F-BqO"/>
+                        <outlet property="textFieldWidth" destination="sWe-oJ-yo1" id="p8J-5e-B3a"/>
+                        <outlet property="topView" destination="KKe-jx-VF1" id="OdK-LG-MGP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2h6-me-hjv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
