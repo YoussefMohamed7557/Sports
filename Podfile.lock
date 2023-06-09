@@ -10,7 +10,7 @@ DEPENDENCIES:
   - Kingfisher
   - RappleProgressHUD
   - ReachabilitySwift
-  - Toast-Swift (~> 5.0.0)
+  - Toast-Swift
 
 SPEC REPOS:
   trunk:
@@ -27,6 +27,6 @@ SPEC CHECKSUMS:
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 313ea6a8743a75ca104db3c3563c36915a40185a
+PODFILE CHECKSUM: a899410600130297dc921ab89aaa327078843cb2
 
 COCOAPODS: 1.12.1

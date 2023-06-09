@@ -183,4 +183,4 @@ extension LeageDetailsViewController{
         }
     }
 }
-// https://apiv2.allsportsapi.com/football/?met=Livescores&leagueId=5&from=2022-05-09&to=2024-02-09&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c
+// https://apiv2.allsportsapi.com/football/?met=Fixtures&leagueId=5&from=2022-05-09&to=2024-02-09&APIkey=3645059754f9efce549eaa794184d13ccf74480d75a81c5c7854f029c2a218cd

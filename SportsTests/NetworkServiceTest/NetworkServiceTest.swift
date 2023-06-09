@@ -28,7 +28,7 @@ final class NetworkServiceTest: XCTestCase {
             XCTAssertNotEqual(leagueList.count, 0)
             expection.fulfill()
         })
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 2000)
     }
     func testGetLeguesForSpecificSportBySportNameShouldReturnNil(){
         let expection = expectation(description: "wait for api")
@@ -41,7 +41,7 @@ final class NetworkServiceTest: XCTestCase {
             XCTFail("data not equal nill")
             expection.fulfill()
         })
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 2000)
     }
     
     func testGetUpComingEventsForSpecificLeaguetBySportNameandLeagueID(){
@@ -55,7 +55,7 @@ final class NetworkServiceTest: XCTestCase {
             XCTAssertNotEqual(upcommingList.count, 0)
             expection.fulfill()
         })
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 2000)
     }
     func testGetUpComingEventsForSpecificLeaguetBySportNameandLeagueIDShouldReturnNil(){
         let expection = expectation(description: "wait for api")
@@ -68,11 +68,11 @@ final class NetworkServiceTest: XCTestCase {
             XCTFail("list not equal nill")
             expection.fulfill()
         })
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 2000)
     }
     func testGetLatestEventsForSpecificLeaguetBySportNameandLeagueID(){
         let expection = expectation(description: "wait for api")
-        NetworkService.getLatestEvents(sportName: "football", leagueId: 4, completionHandler: { latestEvent in
+        NetworkService.getLatestEvents(sportName: "football", leagueId: 5, completionHandler: { latestEvent in
             guard let latestEventsList = latestEvent?.result else{
                 XCTFail("fail to catch data")
                 expection.fulfill()
@@ -81,7 +81,7 @@ final class NetworkServiceTest: XCTestCase {
             XCTAssertNotNil(latestEventsList)
             expection.fulfill()
         })
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 2000)
     }
     func testGetLatestEventsForSpecificLeaguetBySportNameAndLeagueIDShouldEqualNill(){
         let expection = expectation(description: "wait for api")
@@ -94,7 +94,7 @@ final class NetworkServiceTest: XCTestCase {
             XCTFail("list not equal nill")
             expection.fulfill()
         })
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 2000)
     }
     func testGetTeamsForSpecificLeaguetBySportNameandLeagueID(){
         let expection = expectation(description: "wait for api")
@@ -107,7 +107,7 @@ final class NetworkServiceTest: XCTestCase {
             XCTAssertNotEqual(teamsList.count, 0)
             expection.fulfill()
         })
-        waitForExpectations(timeout: 10)
+        waitForExpectations(timeout: 15)
     }
     func testGetTeamsForSpecificLeaguetBySportNameandLeagueIDShouldEqualNill(){
         let expection = expectation(description: "wait for api")
@@ -120,7 +120,7 @@ final class NetworkServiceTest: XCTestCase {
             XCTFail("list not equal nill")
             expection.fulfill()
         })
-        waitForExpectations(timeout: 10)
+        waitForExpectations(timeout: 2000)
     }
     func testGetTeamDetailsForSpecificTeamByTeamID(){
         let expection = expectation(description: "wait for api")

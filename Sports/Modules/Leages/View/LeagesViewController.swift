@@ -119,7 +119,7 @@ extension LeagesViewController:UITableViewDelegate,UITableViewDataSource{
                 let story = UIStoryboard(name: "Main", bundle: nil)
                 let next  = story.instantiateViewController(withIdentifier: "LeageDetailsViewController") as! LeageDetailsViewController
                 next.nameOfSport = sportName
-                next.idOfLeague = leagueList[indexPath.row].league_key
+                next.idOfLeague = filtered ? filteredLeagesList[indexPath.row].league_key : leagueList[indexPath.row].league_key
                 next.modalPresentationStyle = .fullScreen
                 self.present(next, animated: true, completion: nil)
             }
@@ -192,9 +192,6 @@ extension LeagesViewController: UITextFieldDelegate {
     }
     func filterText (_ query: String) {
         filteredLeagesList.removeAll()
-        if query == ""{
-            dismissKeyPad()
-        }
         for string in leagueList {
             if string.league_name!.lowercased().starts(with: query.lowercased()){
                 filteredLeagesList.append(string)

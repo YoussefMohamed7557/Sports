@@ -9,7 +9,7 @@ import Foundation
 class NetworkService : NetworkServicesProtocol {
     
     static func getLeague(sportName: String, completionHandler: @escaping (LeagueRoot?) -> Void ) {
-        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)/?met=Leagues&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c")
+        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)/?met=Leagues&APIkey=3645059754f9efce549eaa794184d13ccf74480d75a81c5c7854f029c2a218cd")
         guard let newUrl = url else {
             return
         }
@@ -29,7 +29,7 @@ class NetworkService : NetworkServicesProtocol {
     }
     
     static func getUpComingEvents(sportName: String, leagueId: Int, completionHandler: @escaping (UpComingRoot?) -> Void) {
-        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&leagueId=\(leagueId)&from=2022-05-09&to=2024-02-09&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c")
+        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&leagueId=\(leagueId)&from=2023-06-05&to=2024-02-09&APIkey=3645059754f9efce549eaa794184d13ccf74480d75a81c5c7854f029c2a218cd")
         guard let newUrl = url else {
             return
         }
@@ -50,7 +50,7 @@ class NetworkService : NetworkServicesProtocol {
     }
     
     static func getLatestEvents(sportName: String, leagueId: Int, completionHandler: @escaping (LatestEventRoot?) -> Void) {
-        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)/?met=Fixtures&leagueId=\(leagueId)&from=2022-05-09&to=2024-02-09&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c")
+        let url = URL(string: "https://apiv2.allsportsapi.com/\(sportName)?met=Fixtures&leagueId=\(leagueId)&from=2022-05-09&to=2024-02-09&APIkey=3645059754f9efce549eaa794184d13ccf74480d75a81c5c7854f029c2a218cd")
         guard let newUrl = url else {
             return
         }
@@ -90,7 +90,7 @@ class NetworkService : NetworkServicesProtocol {
     }
     
     static func getTeamDetails(teamId: Int , completionHandler: @escaping (TeamsRoot?) -> Void ){
-        let url = URL(string: "https://apiv2.allsportsapi.com/football/?&met=Teams&teamId=\(teamId)&APIkey=70bb2b4fc7be3974f347c9c96b60d37dbb4e557b8e75a7c13a1355bdd4e9c48c")
+        let url = URL(string: "https://apiv2.allsportsapi.com/football/?&met=Teams&teamId=\(teamId)&APIkey=3645059754f9efce549eaa794184d13ccf74480d75a81c5c7854f029c2a218cd")
         guard let newUrl = url else {
             return
         }
